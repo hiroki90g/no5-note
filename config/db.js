@@ -20,7 +20,7 @@ const connectDB = async () => {
       serverSelectionTimeoutMS: 5000, // 接続の安定性向上（任意）
     });
 
-    isConnected = db.connections[0].readyState === 1;
+    isConnected = mongoose.connection.readyState === 1;
     console.log('MongoDBに接続しました');
   } catch (err) {
     console.error('MongoDB接続エラー:', err);
