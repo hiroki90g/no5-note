@@ -1,5 +1,5 @@
 const request = require('supertest');
-const {app, connectDB} = require('./server'); // アプリケーション、DB接続のエクスポート
+const {app, connectDB} = require('./api/notes'); // アプリケーション、DB接続のエクスポート
 const mongoose = require('mongoose');
 
 beforeAll(async () => {
