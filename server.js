@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json()); // JSONリクエストを処理するために追加
 
 // // MongoDB接続
-// connectDB();
+connectDB();
 
 // ルートエンドポイント
 app.get('/', (req, res) => {
@@ -83,10 +83,10 @@ app.delete('/notes/:id', async (req, res) => {
     }
 });
 
-// // サーバー起動
-// const PORT = process.env.PORT || 5001;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
+// サーバー起動
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
-module.exports = { app, connectDB };
+// module.exports = { app, connectDB };
