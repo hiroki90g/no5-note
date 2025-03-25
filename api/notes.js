@@ -5,7 +5,7 @@ const Note = require('../models/Note');
 module.exports = async (req, res) => {
     await connectDB(); // MongoDB接続
 
-    // POSTリクエスト（ノートの作成）
+    // POSTリクエスト（ノートの作成） コメントの追加
     if (req.method === 'POST') {
         await body('title').notEmpty().withMessage('タイトルを入力してください').isLength({ max: 10 }).withMessage('タイトルは10文字以内で入力してください').run(req);
         await body('content').notEmpty().withMessage('内容を入力してください').isLength({ max: 100 }).withMessage('内容は100文字以内で入力してください').run(req);
